@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Pomoroad</title>
+    <title>PomoGaku</title>
     <%= csrf_meta_tags %>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/80f55e5c49.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <%= javascript_include_tag 'timer.js' %>
+    <%= render 'layouts/notifications' %>
     <%= yield %>
   </body>
 </html>
