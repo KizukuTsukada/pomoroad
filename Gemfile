@@ -52,5 +52,19 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'devise'
 gem 'font-awesome-rails'
+gem 'font-awesome-sass', '~> 5.4.1'
+
+gem 'pry-rails'
+
+gem 'mini_magick'
+gem 'carrierwave'
+
+gem 'kaminari'
+
+gem 'sprockets', '3.7.2'
+
+gem 'redcarpet', '~> 2.3.0'
+gem 'coderay'
+
+gem 'devise'
