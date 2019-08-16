@@ -1,0 +1,107 @@
+<div class="header2">
+  <div class="header-logo2">
+    <a>ポモ学</a>
+  </div>
+  <ul class="header-menus2">
+    <li>
+      <a rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a>
+    </li>
+  </ul>
+</div>
+
+<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<div class="wrapper">
+  <div class="user-info">
+    <div class="user-box">
+    
+
+  <% unless @user.image.present? %>
+    <%= image_tag("noimage.png", id:"noimage") %>
+  <% else %>
+    <div class="user-image" id="user-image">
+        <%= image_tag(@user.image, id:"img1") %>
+    </div>
+
+  <% end %>
+
+<%= form_for(current_user) do |f| %>
+  <div class="field">
+    <%= f.label :image ,class:"choose-file" do%>
+      <i class="fas fa-portrait"></i>
+      <div class="hidden" style="display: none;" id="myfile">
+        <%= f.file_field :image, class: 'hidden' %>
+      </div>
+      <%= f.submit "写真変更" %> 
+    <% end %>
+    </div>
+<% end%>
+
+<script>
+$(function(){
+  $('#myfile').change(function(e){
+    //ファイルオブジェクトを取得する
+    var file = e.target.files[0];
+    var reader = new FileReader();
+ 
+    //画像でない場合は処理終了
+    if(file.type.indexOf("image") < 0){
+      alert("画像ファイルを指定してください。");
+      return false;
+    }
+ 
+    //アップロードした画像を設定する
+    reader.onload = (function(file){
+      return function(e){
+        $("#img1").attr("src", e.target.result);
+        $("#img1").attr("title", file.name);
+      };
+    })(file);
+    reader.readAsDataURL(file);
+ 
+  });
+});
+</script>
+
+    <div class="user-name">
+    <%= current_user.name %>
+    </div>
+      <div class="user-info-item">
+        <p class="item-name">累計時間</p>
+        <p>：<%= @counts * 25 / 60%>時間  <%= @counts * 25 % 60 %>分</p>
+      </div>
+      <div class="user-info-item">
+        <p class="item-name">投稿</p>
+        <p>：<%= @counts %>件</p>
+      </div>
+      <div class="edit-btn">
+        <%= link_to 'プロフィール編集', edit_user_path %>
+      </div>
+    </div>
+    </div>
+
+  <div class="group-list">
+    <div class="append-group">
+      <%= link_to "カリキュラムを追加する", controller: "groups", action: "new" %>
+    </div>
+  <div class="groups">
+    <% current_user.groups.each do |group| %>
+      <div class="group">
+        <%= link_to group_posts_path(group) do %>
+        <%= group.name %>
+        
+        <% if user_signed_in? && current_user.id == group.user_id %>
+          <div class="more">
+            <%= link_to "/groups/#{group.id}/edit",class: "edit_btn" do %>
+            <i class="fas fa-edit"></i>
+            <% end %>
+            <%= link_to "/groups/#{group.id}",method: :delete,class: "delete_btn", data: { confirm: '削除しますか？' } do %>
+            <i class="far fa-trash-alt"></i>
+            <% end %>
+          </div>
+        <% end %>
+        <% end %>
+        </div>
+    <% end %>
+  </div>
+</div>
