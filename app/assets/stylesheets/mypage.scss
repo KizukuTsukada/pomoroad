@@ -1,0 +1,124 @@
+.user-info{
+  height: 100vh;
+  float: left;
+  width: 500px;
+}
+.user-box {
+  padding: 15px;
+  background: #fbfaf5;
+  max-width: 300px;
+  margin: 61px 0 0 200px;
+  height: 600px;
+  font-size: 20px;
+  border-radius: 18px;
+  a {
+    color: #2d3133;
+    text-decoration: none;
+  }
+}
+
+.user-info-item {
+  display: flex;
+  margin-top: 30px;
+  .item-name {
+    width: 100px;
+  }
+}
+
+.group-list {
+  width: 650px;
+  float: left;
+  height: 646px;
+  padding: 30px;
+  margin-top: 35px;
+  margin-left: 150px;
+  background: #fbfaf5;
+  overflow: scroll;
+  border-radius: 18px;
+}
+
+.append-group{
+  margin: 30px 0;
+  display: inline-block;
+  width: 217px;
+  padding: 12px 20px;
+  background-color: #38aef0;
+  border: 0;
+  border-radius: 50px;
+  a{
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.group{
+  margin-top: 15px;
+  display: flex;
+  background: #FFF;
+  border: solid 3px #6091d3;
+  border-radius: 10px;
+  a{
+    color: black;
+    font-size: 30px;
+    text-decoration: none;
+    margin-left: 9px;
+    max-width: 467px;
+    min-width: 467px;
+  }
+}
+
+.more{
+  margin-left: 10px;
+}
+
+.more-list{
+  text-align: right
+}
+
+.delete_btn:hover{
+  color: red;
+}
+
+.edit_btn:hover{
+  color: blue;
+}
+
+.fa-edit,.fa-trash-alt{
+  font-size: 25px;
+}
+
+.header-menus2 a:hover{
+  color: red;
+}
+
+.user-image{
+  height: 250px;
+  width: 250px;
+  margin: 15px auto;
+}
+
+img{
+  height: 250px;
+  width: 250px;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.edit-btn{
+  width: 187px;
+  padding: 3px;
+  margin: 57px auto 0;
+  background-color: #38aef0;
+  border: 0;
+  border-radius: 50px;
+  text-align: center;
+  a{
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.user-name{
+  margin-top: 3px;
+  font-size: 30px;
+}

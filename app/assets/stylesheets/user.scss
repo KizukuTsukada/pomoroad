@@ -1,0 +1,38 @@
+.account-page{
+  background-image: url(image.5.jpeg);
+  background-size: cover;
+  height: 100vh;
+  padding-top: 232px;
+  h2{
+    font-size: 30px;
+    font-weight: 900;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+  }
+}
+
+.account-page__inner{
+  text-align: center;
+  margin-top: -88px;
+}
+
+a{
+  color: white;
+}
+
+.choose-file{
+  margin-left: 165px;
+}
+
+.field{
+  margin-top: 15px;
+  font-weight: 900;
+}
+
+.cancel-edit:hover{
+  color: red;
+}
+
+#no-image{
+  margin-left: 10px;
+}
