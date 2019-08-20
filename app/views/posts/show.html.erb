@@ -1,0 +1,22 @@
+<div class="header3">
+  <div class="header-logo2">
+    <a>ポモ学</a>
+  </div>
+  <div class="curriculum-name">
+      <%= @group.name %>
+  </div>
+  <ul class="header-menus2">
+    <li>
+      <a href="/users/<%= current_user.id %>"> マイページ</a>
+    </li>
+    <li>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn' %>
+    </li>
+  </ul>
+</div>
+<div class="back-btn">
+  <%= link_to '投稿一覧へ戻る', :back %>
+</div>
+<div class="read-all">
+  <%= markdown(@post.content).html_safe %>
+</div>
