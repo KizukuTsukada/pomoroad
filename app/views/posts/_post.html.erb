@@ -1,0 +1,15 @@
+<div class="grad-wrap">
+  <div class="post" data-id="<%= post.id %>" >
+    <div class="upper-post">
+      <div class="upper-post__date">
+        <%= post.created_at.strftime("%Y/%m/%d %H:%M") %>
+      </div>
+      <div class="upper-post__content">
+        <%= simple_format(post.content).truncate(85) %>
+        <% if post.content.length >= 85 %>
+          <%= link_to '続きを読む',group_post_path(post.group_id, post.id),class: 'read-more',method: :get %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

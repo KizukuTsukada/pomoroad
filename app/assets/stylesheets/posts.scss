@@ -1,0 +1,225 @@
+html{
+  background: silver;
+}
+
+.header2 {
+  top: 0;
+  height: 75px;
+  width: 100%;
+  background: rgba(0, 0, 170, 0.5);
+  display: flex;
+  justify-content: space-between;
+}
+.header-logo2{
+  padding-left: 37px;
+  font-size: 36px;
+  line-height: 75px;
+  a{
+  color: white;
+  text-decoration: none;
+  }
+}
+
+.header--start__btn{
+  line-height: 75px;
+  a{
+    display: inline-block;
+    text-align: center;
+    width: 89px;
+    background: #38aef0;
+    border: 0;
+    border-radius: 50px;
+    text-decoration: none;
+  }
+}
+
+.header-menus2 {
+  line-height: 75px;
+  padding-right: 50px;
+  display: flex;
+  a{
+    margin-left: 16px;
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.header-timer-icon{
+  position: absolute;
+  line-height: 75px;
+}
+.header-timer-icon :hover{
+  opacity: 0.8;
+}
+
+.fas{
+  font-weight: 900;
+}
+
+.fa, .fas {
+  font-weight: 900;
+}
+
+.container{
+  padding-top: 20px;
+}
+
+// ここから投稿フォーム
+.form{
+  width: 800px;
+  float: left;
+  margin-left: 25px;
+  background: white;
+  box-shadow: 0 2px 6px #c1ced7;
+  border-radius: 18px;
+}
+  .form-body {
+
+    padding: 30px;
+    background: #fbfaf5;
+    border-radius: 18px;
+  }
+  .select-menu {
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid #f4f4f4;
+    font-size: 20px;
+    p{
+      margin-left: 10px;
+      margin-top: 4px;
+    }
+  }
+  .form-title {
+    font-size: 20px;
+    margin-right: auto;
+    font-weight: bold;
+  }
+  #select_time {
+    padding: 10px;
+    border: none;
+  }
+  .textbox {
+    width: 100%;
+    font-size: 20px;
+    padding: 10px;
+    min-height: 376px;
+    border: 1px solid #d8dadf;
+    resize: none;
+    border-radius: 8px;
+  }
+  .form__mask {
+    height: 36px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .form__mask .fa-twitter {
+    font-size: 25px;
+    margin-top: 27px;
+    color: #2d3133;
+  }
+  .fa-twitter:before {
+    content: "\f099";
+  }
+  .switchArea {
+    position: relative;
+    width: 52px;
+    background: #fff;
+    margin: 25px 40px 15px 10px;
+  }
+  .switchArea input[type="checkbox"] {
+    display: none;
+  }
+  .switchArea input[type="checkbox"]:checked + label {
+    border-color: #2d3133;
+    background: #0099FF;
+  }
+  .switchArea input[type="checkbox"]:checked ~ .swImg {
+    transform: translateX(22px);
+    background: #2d3133;
+  }
+  .form input[type="submit"] {
+    background: #2d3133;
+    color: white;
+    cursor: pointer;
+    font-weight: 300;
+    width: 120px;
+    height: 50px;
+    border-radius: 2px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    border-radius: 50px;
+  }
+  .form-body:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+
+// ここから投稿一覧
+
+.posts{
+  height: 680px;
+  float: left;
+  width: 500px;
+  padding: 60px;
+  margin-left:45px;
+  margin-top: -77px;
+  background: #fbfaf5;
+  box-shadow: 0 2px 6px #c1ced7;
+  border-radius: 18px;
+  overflow: scroll;
+}
+
+// .grad-wrap{
+//   padding: 0 76px;
+// }
+
+.post{
+  margin-bottom: 20px;
+  max-width: 588px;
+  max-height: 150px;
+  min-height: 150px;
+  background: white;
+  border: solid 1px silver ;
+  border-radius: 5px; 
+  padding: 5px;
+}
+
+.upper-post__content{
+  overflow: scroll;
+  height: 100px;
+  a{
+    color: red;
+  }
+}
+
+.cant__submit{
+  color: red;
+  font-size: 30px;
+  margin-top: 5px;
+}
+
+footer{
+  background: silver;
+}
+
+.back-btn{
+  font-size: 20px;
+  margin-top :10px;
+  margin-left:10px;
+  a{
+  color: blue;
+  }
+}
+
+.read-all{
+  margin: 40px 120px 60px;
+  padding: 60px;
+  min-height: calc(100vh - 120px);
+  background: white;
+  overflow: scroll;
+}
+
+.read-more{
+  color: red;
+}
