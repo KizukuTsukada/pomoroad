@@ -17,7 +17,7 @@
     
 
   <% unless @user.image.present? %>
-    <%= image_tag("noimage.png", id:"noimage") %>
+    <%= image_tag("noimage.png", id:"img1") %>
   <% else %>
     <div class="user-image" id="user-image">
         <%= image_tag(@user.image, id:"img1") %>
