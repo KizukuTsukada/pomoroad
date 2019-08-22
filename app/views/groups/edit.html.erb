@@ -1,0 +1,45 @@
+<div class="header3">
+  <div class="header-logo2">
+    <a> ポモ学</a>
+  </div>
+  <ul class="header-menus2">
+    <li>
+      <a href="/users/<%= current_user.id %>"> マイページ</a>
+    </li>
+    <li>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn' %>
+    </li>
+  </ul>
+</div>
+
+<div class='curriculum-group-form'>
+  <h1>カリキュラム名編集</h1>
+  
+  <%= form_for(@group) do |f| %>
+    <div class='curriculum-group-form__field clearfix'>
+      <div class='curriculum-group-form__field--left'>
+        <label class="curriculum-group-form__label" for="curriculum_group_name">タイトル</label>
+      </div>
+      <div class='curriculum-group-form__field--right'>
+        <%= f.text_field :name, class: "curriculum-group-form__input", placeholder: "タイトルを入力してください", id: "curriculum_group_name" %>
+      </div>
+    </div>
+
+    <div class='curriculum-group-form__field clearfix'>
+      <div class='curriculum-group-form__field--left2'>編集者</div>
+      <div class='curriculum-group-form__field--right'><%= current_user.name %></div>
+    </div>
+
+    <div class='curriculum-group-form__field clearfix'>
+      <div class='curriculum-group-form__field--right'>
+      </div>
+    </div>
+    <div class='curriculum-group-form__field clearfix'>
+      <div class='curriculum-group-form__field--left'></div>
+      <div class='curriculum-group-form__field--right'>
+      
+        <input type="submit" name="commit" value="編集" class="curriculum-group-form__action-btn" data-disable-with="Save" />
+      </div>
+    </div>
+   <% end %>
+</div>
