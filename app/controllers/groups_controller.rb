@@ -37,7 +37,8 @@ class GroupsController < ApplicationController
     group = Group.find(params[:id])
     if group.user_id == current_user.id
       group.destroy
-      redirect_to("/users/:id")
+      flash[:notice] = "カリキュラムを削除しました"
+      redirect_to mypage_path
     end
   end
 

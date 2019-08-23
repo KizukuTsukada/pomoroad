@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  
+  def index
+  end
 
   def edit
   end
@@ -11,13 +14,12 @@ class UsersController < ApplicationController
     end
   end
 
-  def index
-  end
-
   def show
-    @user = User.find_by(id: params[:id])
+    @user = current_user
     @counts = Post.where(user_id: @user.id).count
   end
+
+
 
   private
 
