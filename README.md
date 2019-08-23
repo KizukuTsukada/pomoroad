@@ -1,7 +1,7 @@
 # アプリ名
 
-<span style="font-size: 20px">ポモ学</span>
-<br>
+<p style="font-size: 23px">ポモ学</p>
+https://52.68.146.89<br>
 
 # 概要
 
