@@ -39,6 +39,9 @@ class GroupsController < ApplicationController
       group.destroy
       flash[:notice] = "カリキュラムを削除しました"
       redirect_to mypage_path
+    else
+      flash[:notice] = "商品の削除に失敗しました"
+      render :show
     end
   end
 
