@@ -36,3 +36,5 @@
 ### Association
 - belongs_to :user
 - belongs_to :group
+
+https://github.com/KizukuTsukada/pomoroad/issues/new
