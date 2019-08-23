@@ -1,13 +1,4 @@
-<div class="header2">
-  <div class="header-logo2">
-    <a>ポモ学</a>
-  </div>
-  <ul class="header-menus2">
-    <li>
-      <a rel="nofollow" data-method="delete" href="/users/sign_out">ログアウト</a>
-    </li>
-  </ul>
-</div>
+<%= render partial: 'home/header' %>
 
 <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
 
@@ -36,32 +27,7 @@
     <% end %>
     </div>
 <% end%>
-
-<script>
-$(function(){
-  $('#myfile').change(function(e){
-    //ファイルオブジェクトを取得する
-    var file = e.target.files[0];
-    var reader = new FileReader();
- 
-    //画像でない場合は処理終了
-    if(file.type.indexOf("image") < 0){
-      alert("画像ファイルを指定してください。");
-      return false;
-    }
- 
-    //アップロードした画像を設定する
-    reader.onload = (function(file){
-      return function(e){
-        $("#img1").attr("src", e.target.result);
-        $("#img1").attr("title", file.name);
-      };
-    })(file);
-    reader.readAsDataURL(file);
- 
-  });
-});
-</script>
+<%= javascript_include_tag 'image.js' %>
 
     <div class="user-name">
     <%= current_user.name %>

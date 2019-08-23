@@ -1,16 +1,4 @@
-<div class="header3">
-  <div class="header-logo2">
-    <a> ポモ学</a>
-  </div>
-  <ul class="header-menus2">
-    <li>
-      <a href="/users/<%= current_user.id %>"> マイページ</a>
-    </li>
-    <li>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn' %>
-    </li>
-  </ul>
-</div>
+<%= render partial: 'home/header' %>
 
 <div class='curriculum-group-form'>
   <h1>カリキュラム名編集</h1>

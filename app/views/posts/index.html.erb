@@ -1,51 +1,47 @@
-<div class="header3">
-  <div class="header-logo2">
-    <a>ポモ学</a>
+<header>
+  <div class="header">
+    <div class="header-logo">
+      <a> ポモ学</a>
+    </div>
+    <div class="curriculum-name">
+        <%= @group.name %>
+    </div>
+    <ul class="header-menus">
+      <li>
+        <a href="/users/<%= current_user.id %>"> マイページ</a>
+      </li>
+      <li>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn' %>
+      </li>
+    </ul>
   </div>
-  <div class="curriculum-name">
-      <%= @group.name %>
-  </div>
-  <ul class="header-menus2">
-    <li>
-      <a href="/users/<%= current_user.id %>"> マイページ</a>
-    </li>
-    <li>
-      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn' %>
-    </li>
-  </ul>
-</div>
+</header>
 
-
-   <button id="open">学習開始</button>
-   <%= audio_tag("sound.mp3",id:"sound") %>
-
+<button id="open">学習開始</button>
+  <%= audio_tag("sound.mp3",id:"sound") %>
   <div id="overlay"></div>
-  <div id="modalWindow">
-  
-<div class="timer-conteiner">
-  <div class="timers">
+<div id="modalWindow">  
+  <div class="timer-conteiner">
+    <div class="timers">
       <div id="checkbox"> ２５分後の時間をセットしてください</div>
-          <div class="timer-count">
-              <select id="hour"></select>時
-              <select id="minute"></select>分
-          </div>
-
+        <div class="timer-count">
+            <select id="hour"></select>時
+            <select id="minute"></select>分
+        </div>
       <div class="startbtn">
-          <input type="button" value="START" onclick="setting_save()" >
+        <input type="button" value="START" onclick="setting_save()" >
       </div>
-      </div>
+    </div>
   </div>
 
   <div class="end-count">
-      <div id="alarm_dialog" style="display: none;">お疲れさまでした！<br>
-          <input type="button" value="STOP" onclick="alarm_stop()">
-      </div>
+    <div id="alarm_dialog" style="display: none;">お疲れさまでした！<br>
+      <input type="button" value="STOP" onclick="alarm_stop()">
+    </div>
       <button id="close">Close</button>
+    </div>
   </div>
-  </div>
-
-      </div>
-  </div>
+</div>
 <%= javascript_include_tag 'timer.js' %>
 
 <%# ここから投稿フォーム %>

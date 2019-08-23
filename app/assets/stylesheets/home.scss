@@ -2,9 +2,13 @@
   box-sizing: border-box;
 }
 
-header{
-  background-color: rgba(0, 0, 170, 0.5);
+.header {
   height: 75px;
+  top: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 170, 0.5);
+  display: flex;
+  justify-content: space-between;
 }
 
 .header-logo{
@@ -12,10 +16,23 @@ header{
   font-size: 36px;
   line-height: 75px;
   a{
+  color: white;
+  text-decoration: none;
+  }
+}
+
+.header-menus {
+  line-height: 75px;
+  padding-right: 50px;
+  display: flex;
+  a{
+    margin-left: 16px;
     color: white;
-    line-height: 75px;
     text-decoration: none;
   }
+}
+.header-menus a:hover{
+  color: red;
 }
 
 .fal{

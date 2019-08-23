@@ -1,5 +1,5 @@
 $(function(){
-  $('#user-image').change(function(e){
+  $('#myfile').change(function(e){
     //ファイルオブジェクトを取得する
     var file = e.target.files[0];
     var reader = new FileReader();
