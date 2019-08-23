@@ -37,4 +37,4 @@
 - belongs_to :user
 - belongs_to :group
 
-src="https://user-images.githubusercontent.com/49134272/63570612-ca49cf80-c5b8-11e9-8ce2-5635ddc5a12d.png"
+https://user-images.githubusercontent.com/49134272/63570612-ca49cf80-c5b8-11e9-8ce2-5635ddc5a12d.png
