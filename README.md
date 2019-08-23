@@ -37,4 +37,4 @@
 - belongs_to :user
 - belongs_to :group
 
-https://user-images.githubusercontent.com/49134272/63570612-ca49cf80-c5b8-11e9-8ce2-5635ddc5a12d.png
+<img width="857" alt="スクリーンショット 2019-08-23 15 11 02" src="https://user-images.githubusercontent.com/49134272/63571050-fe71c000-c5b9-11e9-946e-2cb1ca755032.png">
