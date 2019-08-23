@@ -45,7 +45,7 @@ AWS
 <br><br><br>
 
 # ER図
-<img width="857" alt="スクリーンショット 2019-08-23 15 11 02" src="https://user-images.githubusercontent.com/49134272/63571050-fe71c000-c5b9-11e9-946e-2cb1ca755032.png">
+<img width="815" alt="スクリーンショット 2019-08-23 20 15 57" src="https://user-images.githubusercontent.com/49134272/63588996-e19db280-c5e2-11e9-9382-34b7eb1f2679.png">
 <br>
 <br>
 
