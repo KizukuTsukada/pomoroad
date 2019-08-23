@@ -1,6 +1,6 @@
 # アプリ名
 
-<span style="font-size: 20px">ポモ学</span>
+<span style="font-size: 25px">ポモ学</span>
 <br>
 
 # 概要
