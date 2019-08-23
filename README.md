@@ -15,7 +15,7 @@ Ruby on Railsを総合的に復習でき、追加機能を足すことができ�
 ポモドーロ・テクニックにアウトプットの時間を合わせることで、より知識の定着をしやすくできると考えました。<br>
 <br>
 # テストユーザー
-email: test@gmail.com<br>
+email: sample@gmail.com<br>
 Pass : pppppp<br>
 <br>
 # 使用言語・フレームワーク
