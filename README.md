@@ -60,6 +60,11 @@ AWS
 アウトプットした内容を振り返ることができます。<br>
 <img width="200" alt="check" src="https://user-images.githubusercontent.com/49134272/63632280-24589c80-c66e-11e9-9ca5-16e99a097074.png">
 
+# 今後の課題
+
+①可読性の低いコードがあるためリファクタリングしていきます。<br>
+②アウトプットをTwitterと同時投稿できるようにTwitterAPIの導入に挑戦したいと思っております。<br>
+③お問い合わせフォームが見た目だけで機能していないため、機能を実装します。
 
 # ER図
 <img width="600" alt="スクリーンショット 2019-08-23 20 15 57" src="https://user-images.githubusercontent.com/49134272/63588996-e19db280-c5e2-11e9-9382-34b7eb1f2679.png">
