@@ -53,7 +53,7 @@ AWS
 <br>
 <img width="200" alt="timer" src="https://user-images.githubusercontent.com/49134272/63632220-43a2fa00-c66d-11e9-910f-cc0f3bf5ff53.png">
 
-設定時刻になるとアラームが鳴ります。作業を止め25分で学んだことをアウトプットしてください。
+設定時刻になるとアラームが鳴ります。作業を止め25分で学んだことをアウトプットしてください。<br>
 手を止めず書き続けることで定着具合がわかります。<br>
 <img width="200" alt="output" src="https://user-images.githubusercontent.com/49134272/63632271-04c17400-c66e-11e9-9c27-853c5645ec62.png">
 
