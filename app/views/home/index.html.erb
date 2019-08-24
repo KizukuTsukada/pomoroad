@@ -9,30 +9,37 @@
     </div>
   </section>
 
-  <section class="infomations">
-      <h2 class="heading">How to Use</h2>
-      <h3>ポモドーロ・テクニックとアウトプットを使って効率的な学習を行うアプリです</h3>
-      <div class="infomations-wrapper">
-      </div>
-    </section>
+  <section class="howto">
+    <h2 class="howto-title">How to Use</h2>
+    <h3>ポモドーロ・テクニックとアウトプットを使って効率的な学習を行うアプリです</h3>
+  </section>
   
-  <section class="infomations2">
-      <h2 class="heading2">①25分勉強だけに集中しましょう</h2>
-      <div class="infomations-wrapper">
-          <div class="infomation-description">
-            学習開始ボタンを押すとタイマーが出てきます。<br>
-            25分後の時間をセットしましょう。<br>
-            アラームが鳴ったらタイマー画面を閉じて学んだことを<br>アウトプットしましょう。
-          </div>
+  <section class="infomations">
+    <div class="infomations-wrapper">
+      <div>
+        <h2 class="heading2">①25分勉強だけに集中しましょう</h2>
+        <div class="infomation-description">
+          学習開始ボタンを押すとタイマーが出てきます。<br>
+          25分後の時間をセットしましょう。<br>
+          アラームが鳴ったらタイマー画面を閉じて学んだことを<br>アウトプットしましょう。
         </div>
       </div>
-    </section>
+      <div class="right-image">
+        <%= image_tag "timer.png",size: "360x260" %>
+      </div>
+    </div>
+  </section>
 
-  <section class="infomations3">
-    <h2 class="heading2">②学習内容を定着させよう</h2>
-    <div class="infomations-wrapper2">
+  <section class="infomations2">
+    <div class="infomations-wrapper">
+      <div class="right-image">
+        <%= image_tag "output.png",size: "360x260" %>
+      </div>
+      <div style="text-align: right;">
+      <h2 class="heading2">②学習内容を定着させよう</h2>
+      <div class="infomations-wrapper2">
         <div class="infomation-description2">
-         　25分で学習したことを全力で書き起こしましょう。<br>
+          25分で学習したことを全力で書き起こしましょう。<br>
           アウトプットはインプットより重要です。<br>
           学習内容を自分の言葉でアウトプットすることで<br>理解度もわかります。<br>
           積極的にツイートしましょう。<br>
@@ -42,25 +49,29 @@
     </div>
   </section>
 
-  <section class="infomations2">
-      <h2 class="heading2">③すき間時間で復習を</h2>
-      <div class="infomations-wrapper">
-          <div class="infomation-description">
-            アウトプットして終わりではありません。<br>
-            通勤時間や通学時間、お昼休憩などのすき間時間で見直すことで<br>
-            知識の定着を深めましょう。<br>
-          </div>
+  <section class="infomations">
+    <div class="infomations-wrapper">
+      <div>
+        <h2 class="heading2">③すき間時間で復習を</h2>
+        <div class="infomation-description">
+          アウトプットして終わりではありません。<br>
+          通勤時間や通学時間、お昼休憩などのすき間時間で見直すことで<br>
+          知識の定着を深めましょう。<br>
         </div>
+      </div>  
+      <div class="right-image">
+        <%= image_tag "check.png",size: "360x260" %>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="contact" id="contact">
-        <h2>お問い合わせ</h2>
-        <form class="contact-form">
-          <input type="text" name="name" placeholder="NAME">
-          <textarea name="message" placeholder="MESSAGE"></textarea>
-          <input type="submit" value="SEND">
-        </form>
-      </section>
+  <section class="contact" id="contact">
+    <h2>お問い合わせ</h2>
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="NAME">
+      <textarea name="message" placeholder="MESSAGE"></textarea>
+      <input type="submit" value="SEND">
+    </form>
+  </section>
 
 </body>
