@@ -1,37 +1,36 @@
 <%= render partial: 'home/header' %>
 
-<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
-
 <div class="wrapper">
   <div class="user-info">
     <div class="user-box">
-    
+      <%# ユーザー画像が無ければnoimageを表示 %>
+      <% unless @user.image.present? %>
+        <%= image_tag("noimage.png", id:"img1") %>
+      <% else %>
+      <%# ユーザー画像があればユーザー画像を表示 %>
+        <div class="user-image" id="user-image">
+          <%= image_tag(@user.image, id:"img1") %>
+        </div>
+      <% end %>
+      <%# ログイン中のユーザーとユーザーページが一致していないと画像変更を表示しない %>
+      <% if @user.id == current_user.id  %>
+        <%= form_for(@user) do |f| %>
+          <div class="field">
+            <%= f.label :image ,class:"choose-file" do%>
+              <i class="fas fa-portrait"></i>
+                <div class="hidden" style="display: none;" id="myfile">
+                  <%= f.file_field :image, class: 'hidden' %>
+                </div>
+              <%= f.submit "写真変更" %> 
+            <% end %>
+          </div>
+        <% end%>
+        <%= javascript_include_tag 'image.js' %>
+      <% end %>
 
-  <% unless @user.image.present? %>
-    <%= image_tag("noimage.png", id:"img1") %>
-  <% else %>
-    <div class="user-image" id="user-image">
-        <%= image_tag(@user.image, id:"img1") %>
-    </div>
-
-  <% end %>
-
-<%= form_for(current_user) do |f| %>
-  <div class="field">
-    <%= f.label :image ,class:"choose-file" do%>
-      <i class="fas fa-portrait"></i>
-      <div class="hidden" style="display: none;" id="myfile">
-        <%= f.file_field :image, class: 'hidden' %>
+      <div class="user-name">
+        <%= @user.name %>
       </div>
-      <%= f.submit "写真変更" %> 
-    <% end %>
-    </div>
-<% end%>
-<%= javascript_include_tag 'image.js' %>
-
-    <div class="user-name">
-    <%= current_user.name %>
-    </div>
       <div class="user-info-item">
         <p class="item-name">累計時間</p>
         <p>：<%= @counts * 25 / 60%>時間  <%= @counts * 25 % 60 %>分</p>
@@ -40,34 +39,42 @@
         <p class="item-name">投稿</p>
         <p>：<%= @counts %>件</p>
       </div>
-      <div class="edit-btn">
-        <%= link_to 'プロフィール編集', edit_user_path %>
-      </div>
+      <%# ログイン中のユーザーとユーザーページが一致していないと編集ボタンを表示しない %>
+      <% if @user.id == current_user.id  %>
+        <div class="edit-btn">
+          <%= link_to 'プロフィール編集', edit_user_path %>
+        </div>
+      <% end %>
     </div>
-    </div>
+  </div>
 
   <div class="group-list">
+  <%# ログイン中のユーザーとユーザーページが一致していないと追加ボタンを表示しない %>
+  <% if @user.id == current_user.id  %>
     <div class="append-group">
       <%= link_to "カリキュラムを追加する", controller: "groups", action: "new" %>
     </div>
+  <% end %>
   <div class="groups">
-    <% current_user.groups.each do |group| %>
+    <% @user.groups.each do |group| %>
       <div class="group">
         <%= link_to group_posts_path(group) do %>
-        <%= group.name %>
-        
-        <% if user_signed_in? && current_user.id == group.user_id %>
-          <div class="more">
-            <%= link_to "/groups/#{group.id}/edit",class: "edit_btn" do %>
-            <i class="fas fa-edit"></i>
-            <% end %>
-            <%= link_to "/groups/#{group.id}",method: :delete,class: "delete_btn", data: { confirm: '削除しますか？' } do %>
-            <i class="far fa-trash-alt"></i>
-            <% end %>
-          </div>
+          <%= group.name %>
+          
+          <%# ログイン中のユーザーとユーザーページが一致していないと編集・削除アイコンを表示しない %>
+          <% if @user.id == current_user.id  %>
+            <div class="more">
+              <%= link_to "/groups/#{group.id}/edit",class: "edit_btn" do %>
+              <i class="fas fa-edit"></i>
+              <% end %>
+              <%= link_to "/groups/#{group.id}",method: :delete,class: "delete_btn", data: { confirm: '削除しますか？' } do %>
+              <i class="far fa-trash-alt"></i>
+              <% end %>
+            </div>
+          <% end %>
         <% end %>
-        <% end %>
-        </div>
+      </div>
     <% end %>
   </div>
+</div>
 </div>

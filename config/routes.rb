@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get "home/show", to: "home#show"
   get "users/:id", to: "users#show", as: :mypage
   resources :users
-
   resources :groups, only: [:new, :create, :edit, :update, :destroy] do
     resources :posts, only: [:index, :create, :show]
   end

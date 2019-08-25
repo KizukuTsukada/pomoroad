@@ -1,13 +1,17 @@
+.wrapper{
+  display: flex;
+}
+
 .user-info{
   height: 100vh;
   float: left;
-  width: 500px;
+  width: 50%;
 }
 .user-box {
   padding: 25px;
   background: #fbfaf5;
   max-width: 300px;
-  margin: 61px 0 0 200px;
+  margin: 60px 0 0 200px;
   height: 600px;
   font-size: 20px;
   border-radius: 18px;
@@ -26,12 +30,11 @@
 }
 
 .group-list {
-  width: 650px;
-  float: left;
+  width: 50;
+  float: right;
   height: 646px;
   padding: 30px;
   margin-top: 35px;
-  margin-left: 150px;
   background: #fbfaf5;
   overflow: scroll;
   border-radius: 18px;
@@ -54,6 +57,7 @@
 .group{
   margin-top: 15px;
   display: flex;
+  justify-content: space-between;
   background: #FFF;
   border: solid 3px #6091d3;
   border-radius: 10px;
@@ -68,7 +72,7 @@
 }
 
 .more{
-  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .more-list{

@@ -17,72 +17,76 @@
   </div>
 </header>
 
-<button id="open">学習開始</button>
-  <%= audio_tag("sound.mp3",id:"sound") %>
-  <div id="overlay"></div>
-<div id="modalWindow">  
-  <div class="timer-conteiner">
-    <div class="timers">
-      <div id="checkbox"> ２５分後の時間をセットしてください</div>
-        <div class="timer-count">
-            <select id="hour"></select>時
-            <select id="minute"></select>分
+<div id="post-container">
+  <div class="left-box">
+    <button id="open">学習開始</button>
+      <%= audio_tag("sound.mp3",id:"sound") %>
+      <div id="overlay"></div>
+    <div id="modalWindow">  
+      <div class="timer-conteiner">
+        <div class="timers">
+          <div id="checkbox"> ２５分後の時間をセットしてください</div>
+            <div class="timer-count">
+                <select id="hour"></select>時
+                <select id="minute"></select>分
+            </div>
+          <div class="startbtn">
+            <input type="button" value="START" onclick="setting_save()" >
+          </div>
         </div>
-      <div class="startbtn">
-        <input type="button" value="START" onclick="setting_save()" >
       </div>
-    </div>
-  </div>
 
-  <div class="end-count">
-    <div id="alarm_dialog" style="display: none;">お疲れさまでした！<br>
-      <input type="button" value="STOP" onclick="alarm_stop()">
-    </div>
-      <button id="close">Close</button>
-    </div>
-  </div>
-</div>
-<%= javascript_include_tag 'timer.js' %>
-
-<%# ここから投稿フォーム %>
-<div class="container">
-  <%= form_for [@group, @post],id: :new__post, html: {id:'new-post'}  do |f| %>
-  <div class="form">
-  <div class="form-body">
-    <div class="select-menu">
-    <h2 class="form-title">学習時間</h2>
-    <select id="select_time" name="post[running_time]">
-      <option selected="selected" value="25">25分</option>
-  </select>
-  </div>
-    <h2 class="form-title">アウトプットをしよう！</h2>
-    <textarea class="textbox" name="post[content]" placeholder="マークダウン記法が使用できます。"></textarea>
-    <div class="form__mask">
-      <%# <i class="fa fa-twitter"></i> %>
-    <div class="switchArea">
-      <input type="checkbox" name="tweet_toggle" id="switch" checked="checked">
-    <label for="switch">
-      <span></span>
-    </label>
-    <div class="swImg">
-    </div>
+      <div class="end-count">
+        <div id="alarm_dialog" style="display: none;">お疲れさまでした！<br>
+          <input type="button" value="STOP" onclick="alarm_stop()">
+        </div>
+          <button id="close">Close</button>
+        </div>
       </div>
-        <% if current_user.id == @group.user_id%>
-          <input type="submit" name="commit" value="投稿" data-disable-with="投稿" class="form__submit">
-        <% else%>
-          <div class="cant__submit">作成者のみ投稿できます</div>
-        <% end %>
+
+  <%= javascript_include_tag 'timer.js' %>
+
+  <%# ここから投稿フォーム %>
+    <div class="container">
+      <%= form_for [@group, @post],id: :new__post, html: {id:'new-post'}  do |f| %>
+        <div class="form">
+          <div class="form-body">
+            <div class="select-menu">
+              <h2 class="form-title">学習時間</h2>
+              <select id="select_time" name="post[running_time]">
+                <option selected="selected" value="25">25分</option>
+              </select>
+            </div>
+              <h2 class="form-title">アウトプットをしよう！</h2>
+              <textarea class="textbox" name="post[content]" placeholder="マークダウン記法が使用できます。"></textarea>
+            <div class="form__mask">
+              <%# <i class="fa fa-twitter"></i> 後々導入予定%>
+              <div class="switchArea">
+              <input type="checkbox" name="tweet_toggle" id="switch" checked="checked">
+              <label for="switch">
+                <span></span>
+              </label>
+              <div class="swImg">
+              </div>
+            </div>
+            <% if current_user.id == @group.user_id%>
+              <input type="submit" name="commit" value="投稿" data-disable-with="投稿" class="form__submit">
+            <% else%>
+              <div class="cant__submit">作成者のみ投稿できます</div>
+            <% end %>
           </div>  
         </div>
-      </div>
-  <% end %>
-
-<%# ここから投稿一覧 %>
-  <div class="posts">
-    <%= render @posts %>
-    <%= paginate(@posts) %>
-  </div>
+      <% end %>
     </div>
   </div>
   </div>
-</div>
+
+  <%# ここから投稿一覧 %>
+
+  <div class="right-box">
+    <div class="posts">
+      <%= render @posts %>
+      <%= paginate(@posts) %>
+    </div>
+  </div>
+</div> 
