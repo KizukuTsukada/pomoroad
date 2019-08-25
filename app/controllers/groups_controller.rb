@@ -35,11 +35,11 @@ class GroupsController < ApplicationController
   end
 
   def destroy
-    group = Group.find(params[:id])
-    if group.user_id == current_user.id
-      group.destroy
+    @group = Group.find(params[:id])
+    if @group.user_id == current_user.id
+      @group.destroy
       flash[:notice] = "カリキュラムを削除しました"
-      redirect_to mypage_path
+      redirect_to "/users/#{current_user.id}"
     else
       flash[:notice] = "商品の削除に失敗しました"
       render :show

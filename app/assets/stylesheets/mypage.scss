@@ -2,6 +2,11 @@
   display: flex;
 }
 
+.mypage a:hover{
+  color: blue;
+  transition: color .3s;
+}
+
 .user-info{
   height: 100vh;
   float: left;
@@ -23,11 +28,17 @@
     height: 250px;
     width: 250px;
     margin: 15px auto;
+    &__field{
+      margin-top: 10px;
+      font-weight: 900;
+      display: flex;
+      justify-content: flex-end;
+    }
   }
-  &__item {
+  &--item {
     display: flex;
     margin-top: 30px;
-    &-name {
+    &__time,&__post {
       width: 100px;
     }
   }
@@ -47,71 +58,6 @@
 }
 
 
-
-.group-list {
-  width: 50;
-  float: right;
-  height: 646px;
-  padding: 30px;
-  margin-top: 35px;
-  background: #fbfaf5;
-  overflow: scroll;
-  border-radius: 18px;
-  &__append-btn{
-    margin: 30px 0;
-    display: inline-block;
-    width: 217px;
-    padding: 12px 20px;
-    background-color: #38aef0;
-    border: 0;
-    border-radius: 50px;
-    a{
-      color: #fff;
-      text-decoration: none;
-    }
-  }
-  &__group{
-    margin-top: 15px;
-    display: flex;
-    justify-content: space-between;
-    background: #FFF;
-    border: solid 3px #6091d3;
-    border-radius: 10px;
-    a{
-      color: black;
-      font-size: 30px;
-      text-decoration: none;
-      margin-left: 9px;
-      max-width: 467px;
-      min-width: 467px;
-    }
-  }
-}
-
-
-
-
-
-.more{
-  margin-right: 10px;
-}
-
-.more-list{
-  text-align: right
-}
-
-.delete_btn:hover{
-  color: red;
-}
-
-.fa-edit,.fa-trash-alt{
-  font-size: 25px;
-}
-
-
-
-
-
 #img1{
   height: 250px;
   width: 250px;
@@ -119,9 +65,28 @@
   border-radius: 10px;
 }
 
-
-
 .user-name{
   margin-top: 3px;
   font-size: 30px;
+}
+
+a{
+  color: white;
+}
+
+.choose-file{
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+#no-image{
+  margin-left: 10px;
+}
+
+#chenge-none{
+  display: none;
+}
+#chenge-btn:hover{
+  -webkit-transform: scale(2.5);
+  transform: scale(1.1);
 }

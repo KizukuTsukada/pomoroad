@@ -9,30 +9,13 @@
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: white;
   }
-}
-
-.account-page__inner{
-  text-align: center;
-  margin-top: -88px;
-}
-
-a{
-  color: white;
-}
-
-.choose-file{
-  margin-left: 165px;
-}
-
-.field{
-  margin-top: 15px;
-  font-weight: 900;
+  &__inner{
+    text-align: center;
+    margin-top: -88px;
+  }
 }
 
 .cancel-edit:hover{
   color: red;
-}
-
-#no-image{
-  margin-left: 10px;
+  transition: color .3s;
 }

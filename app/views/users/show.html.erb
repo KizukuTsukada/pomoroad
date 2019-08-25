@@ -15,14 +15,16 @@
       <%# ログイン中のユーザーとユーザーページが一致していないと画像変更を表示しない %>
       <% if @user.id == current_user.id  %>
         <%= form_for(@user) do |f| %>
-          <div class="field">
+          <div class="user-info__image__field">
             <%= f.label :image ,class:"choose-file" do%>
               <i class="fas fa-portrait"></i>
                 <div class="hidden" style="display: none;" id="myfile">
-                  <%= f.file_field :image, class: 'hidden', required: true %>
+                  <%= f.file_field :image, class: 'hidden' %>
                 </div>
-                <%= f.submit "写真変更" %>
             <% end %>
+          <div id="chenge-none">
+            <%= f.submit "変更する" %>
+          </div>
           </div>
         <% end %>
         <%= javascript_include_tag 'image.js' %>
@@ -31,12 +33,12 @@
       <div class="user-name">
         <%= @user.name %>
       </div>
-      <div class="user-info__item">
-        <p class="user-info__item--name">累計時間</p>
+      <div class="user-info--item">
+        <p class="user-info--item__time">累計時間</p>
         <p>：<%= @counts * 25 / 60%>時間  <%= @counts * 25 % 60 %>分</p>
       </div>
-      <div class="user-info__item">
-        <p class="user-info__item--name">投稿</p>
+      <div class="user-info--item">
+        <p class="user-info__item--post">投稿</p>
         <p>：<%= @counts %>件</p>
       </div>
       <%# ログイン中のユーザーとユーザーページが一致していないと編集ボタンを表示しない %>
@@ -63,11 +65,11 @@
           
           <%# ログイン中のユーザーとユーザーページが一致していないと編集・削除アイコンを表示しない %>
           <% if @user.id == current_user.id  %>
-            <div class="more">
-              <%= link_to "/groups/#{group.id}/edit",class: "edit_btn" do %>
+            <div class="group-list__group--more">
+              <%= link_to "/groups/#{group.id}/edit",class: "group-list__group--more__edit-btn" do %>
               <i class="fas fa-edit"></i>
               <% end %>
-              <%= link_to "/groups/#{group.id}",method: :delete,class: "delete_btn", data: { confirm: '削除しますか？' } do %>
+              <%= link_to "/groups/#{group.id}",method: :delete,class: "group-list__group--more__delete-btn", data: { confirm: '削除しますか？' } do %>
               <i class="far fa-trash-alt"></i>
               <% end %>
             </div>

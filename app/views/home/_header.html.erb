@@ -6,7 +6,9 @@
   <% if user_signed_in? %>
   <ul class="header-menus">
     <li>
-      <a href="/users/<%= current_user.id %>"> マイページ</a>
+      <div class="mypage">
+        <a href="/users/<%= current_user.id %>"> マイページ</a>
+      </div>
     </li>
     <li>
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: 'btn' %>

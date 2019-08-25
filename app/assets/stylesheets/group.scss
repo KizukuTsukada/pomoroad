@@ -1,3 +1,4 @@
+// カリキュラム作成・編集
 .curriculum-name{
   line-height: 75px;
   color: white;
@@ -134,4 +135,70 @@
   padding: 0 20px;
   border-radius: 11px;
   background: #9966CC;
+}
+
+
+// マイページカリキュラムリスト
+.group-list {
+  width: 650px;
+  float: right;
+  height: 646px;
+  padding: 30px;
+  margin-top: 35px;
+  background: #fbfaf5;
+  overflow: scroll;
+  border-radius: 18px;
+  &__append-btn{
+    margin: 10px 0;
+    display: inline-block;
+    width: 217px;
+    padding: 12px 20px;
+    background-color: #38aef0;
+    border: 0;
+    border-radius: 50px;
+    a{
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  &__group{
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    background: #FFF;
+    border: solid 3px #6091d3;
+    border-radius: 10px;
+    a{
+      color: black;
+      font-size: 30px;
+      text-decoration: none;
+      margin-left: 9px;
+      max-width: 467px;
+      min-width: 467px;
+    }
+    &--more{
+      margin-right: 10px;
+      &__edit-btn:hover{
+        color: blue;
+        transition: color .3s;
+      }
+      &__delete-btn:hover{
+        color: red;
+        transition: color .3s;
+      }    
+    }
+  }
+  &__group:hover{
+    background: rgba(192,192,192,0.5);
+    transition: color .3s;
+  }
+}
+
+.fa-portrait:hover{
+  -webkit-transform: scale(3);
+  transform: scale(1.3);
+}
+
+.fa-edit,.fa-trash-alt{
+  font-size: 25px;
 }

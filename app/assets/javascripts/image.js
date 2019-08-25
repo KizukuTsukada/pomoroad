@@ -12,7 +12,7 @@ $(function(){
     reader.onload = (function(file){
       return function(e){
         $("#img1").attr("src", e.target.result);
-        $("#img1").attr("title", file.name);
+        $("#chenge-none").attr('id', 'chenge-btn');
       };
     })(file);
     reader.readAsDataURL(file);

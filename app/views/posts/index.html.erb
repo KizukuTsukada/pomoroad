@@ -51,29 +51,22 @@
       <%= form_for [@group, @post],id: :new__post, html: {id:'new-post'}  do |f| %>
         <div class="form">
           <div class="form-body">
-            <div class="select-menu">
-              <h2 class="form-title">学習時間</h2>
-              <select id="select_time" name="post[running_time]">
+            <div class="post-form">
+              <h2 class="post-form__time">学習時間</h2>
+              <select id="time" name="post[running_time]">
                 <option selected="selected" value="25">25分</option>
               </select>
             </div>
-              <h2 class="form-title">アウトプットをしよう！</h2>
+              <h2 class="post-form__info">アウトプットをしよう！</h2>
               <textarea class="textbox", name="post[content]", placeholder="マークダウン記法が使用できます。", id="input-text"></textarea>
             <div class="form__mask">
               <div id="char-count">
                 0文字
               </div>
-              <%# <i class="fa fa-twitter"></i> 後々導入予定%>
-              <div class="switchArea">
-              <input type="checkbox" name="tweet_toggle" id="switch" checked="checked">
-              <label for="switch">
-                <span></span>
-              </label>
-              <div class="swImg">
-              </div>
-            </div>
             <% if current_user.id == @group.user_id%>
-              <input type="submit" name="commit" value="投稿" data-disable-with="投稿" class="form__submit">
+              <div>
+                <input type="submit" name="commit" value="投稿" data-disable-with="投稿" class="form__submit">
+              </div>
             <% else%>
               <div class="cant__submit">作成者のみ投稿できます</div>
             <% end %>

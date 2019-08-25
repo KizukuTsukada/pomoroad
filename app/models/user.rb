@@ -7,6 +7,4 @@ class User < ApplicationRecord
   has_many :groups
   has_many :posts
   mount_uploader :image, ImagesUploader
-
-  validates :image, presence: true, length: { maximum: 20 }
 end
