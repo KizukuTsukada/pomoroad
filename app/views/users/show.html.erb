@@ -1,14 +1,14 @@
 <%= render partial: 'home/header' %>
 
-<div class="wrapper">
+<div class="mypage-body">
   <div class="user-info">
-    <div class="user-box">
+    <div class="user-info__box">
       <%# ユーザー画像が無ければnoimageを表示 %>
       <% unless @user.image.present? %>
         <%= image_tag("noimage.png", id:"img1") %>
       <% else %>
       <%# ユーザー画像があればユーザー画像を表示 %>
-        <div class="user-image" id="user-image">
+        <div class="user-info__image" id="user-image">
           <%= image_tag(@user.image, id:"img1") %>
         </div>
       <% end %>
@@ -19,29 +19,29 @@
             <%= f.label :image ,class:"choose-file" do%>
               <i class="fas fa-portrait"></i>
                 <div class="hidden" style="display: none;" id="myfile">
-                  <%= f.file_field :image, class: 'hidden' %>
+                  <%= f.file_field :image, class: 'hidden', required: true %>
                 </div>
-              <%= f.submit "写真変更" %> 
+                <%= f.submit "写真変更" %>
             <% end %>
           </div>
-        <% end%>
+        <% end %>
         <%= javascript_include_tag 'image.js' %>
       <% end %>
 
       <div class="user-name">
         <%= @user.name %>
       </div>
-      <div class="user-info-item">
-        <p class="item-name">累計時間</p>
+      <div class="user-info__item">
+        <p class="user-info__item--name">累計時間</p>
         <p>：<%= @counts * 25 / 60%>時間  <%= @counts * 25 % 60 %>分</p>
       </div>
-      <div class="user-info-item">
-        <p class="item-name">投稿</p>
+      <div class="user-info__item">
+        <p class="user-info__item--name">投稿</p>
         <p>：<%= @counts %>件</p>
       </div>
       <%# ログイン中のユーザーとユーザーページが一致していないと編集ボタンを表示しない %>
       <% if @user.id == current_user.id  %>
-        <div class="edit-btn">
+        <div class="user-info__edit-btn">
           <%= link_to 'プロフィール編集', edit_user_path %>
         </div>
       <% end %>
@@ -51,13 +51,13 @@
   <div class="group-list">
   <%# ログイン中のユーザーとユーザーページが一致していないと追加ボタンを表示しない %>
   <% if @user.id == current_user.id  %>
-    <div class="append-group">
+    <div class="group-list__append-btn">
       <%= link_to "カリキュラムを追加する", controller: "groups", action: "new" %>
     </div>
   <% end %>
-  <div class="groups">
+  <div class="group-list__groups">
     <% @user.groups.each do |group| %>
-      <div class="group">
+      <div class="group-list__group">
         <%= link_to group_posts_path(group) do %>
           <%= group.name %>
           

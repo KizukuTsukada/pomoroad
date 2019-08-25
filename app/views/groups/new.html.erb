@@ -2,16 +2,13 @@
 
 <div class='curriculum-group-form'>
   <h1>学習するタイトル名を入力してください</h1>
-
-    <%# エラーメッセージ入れる %>
-
   <%= form_for(@group) do |f| %>
     <div class='curriculum-group-form__field clearfix'>
       <div class='curriculum-group-form__field--left'>
         <label class="curriculum-group-form__label" for="curriculum_group_name">タイトル</label>
       </div>
       <div class='curriculum-group-form__field--right'>
-        <%= f.text_field :name, class: "curriculum-group-form__input", placeholder: "タイトルを入力してください", id: "curriculum_group_name" %>
+        <%= f.text_field :name, class: "curriculum-group-form__input", placeholder: "タイトルを入力してください(最大20文字)", id: "curriculum_group_name" %>
       </div>
     </div>
 
@@ -24,10 +21,10 @@
       <div class='curriculum-group-form__field--right'>
       </div>
     </div>
+
     <div class='curriculum-group-form__field clearfix'>
       <div class='curriculum-group-form__field--left'></div>
       <div class='curriculum-group-form__field--right'>
-      
         <input type="submit" name="commit" value="作成" class="curriculum-group-form__action-btn" data-disable-with="Save" />
       </div>
     </div>

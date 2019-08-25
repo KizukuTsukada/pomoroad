@@ -18,6 +18,7 @@ class GroupsController < ApplicationController
       flash[:notice] = "カリキュラムを追加しました"
     else
       render :new
+      flash[:notice] = "タイトルを入力してください"
     end
   end
 

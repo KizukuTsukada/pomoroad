@@ -58,8 +58,11 @@
               </select>
             </div>
               <h2 class="form-title">アウトプットをしよう！</h2>
-              <textarea class="textbox" name="post[content]" placeholder="マークダウン記法が使用できます。"></textarea>
+              <textarea class="textbox", name="post[content]", placeholder="マークダウン記法が使用できます。", id="input-text"></textarea>
             <div class="form__mask">
+              <div id="char-count">
+                0文字
+              </div>
               <%# <i class="fa fa-twitter"></i> 後々導入予定%>
               <div class="switchArea">
               <input type="checkbox" name="tweet_toggle" id="switch" checked="checked">
