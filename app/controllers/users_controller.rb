@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
   def edit
+    @user = User.find_by(id: params[:id])
+    @counts = Post.where(user_id: @user.id).count
   end
 
   def update 

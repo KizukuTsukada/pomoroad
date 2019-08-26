@@ -1,43 +1,87 @@
-<div id="account-page" class="account-page">  
-  <div class="account-page__inner clearfix">
+<%= render partial: 'home/header' %>
 
-<%= form_for(current_user) do |f| %>
+<div class="mypage-body">
+  <div class="user-info">
+    <div class="user-info__box">
+      <%# ユーザー画像が無ければnoimageを表示 %>
+      <% unless @user.image.present? %>
+        <%= image_tag("noimage.png", id:"img1") %>
+      <% else %>
+      <%# ユーザー画像があればユーザー画像を表示 %>
+        <div class="user-info__image" id="user-image">
+          <%= image_tag(@user.image, id:"img1") %>
+        </div>
+      <% end %>
+      <%# ログイン中のユーザーとユーザーページが一致していないと画像変更を表示しない %>
+      <% if @user.id == current_user.id  %>
+        <%= form_for(@user) do |f| %>
+          <div class="user-info__image__field">
+            <%= f.label :image ,class:"choose-file" do%>
+              <i class="fas fa-portrait"></i>
+                <div class="hidden" style="display: none;" id="myfile">
+                  <%= f.file_field :image, class: 'hidden' %>
+                </div>
+            <% end %>
+          <div id="chenge-none">
+            <%= f.submit "変更する" %>
+          </div>
+          </div>
+        <% end %>
+        <%= javascript_include_tag 'image.js' %>
+      <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+      <div class="user-name">
+        <%= form_for(current_user) do |f| %>
+          <div class="user-name__field">
+            <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+          </div>
+          <% if @user.id == current_user.id  %>
+            <div class="user-info__edit-btn">
+              <%= link_to '決定', edit_user_path %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+      <div class="user-info--item">
+        <p class="user-info--item__time">累計時間</p>
+        <p>：<%= @counts * 25 / 60%>時間  <%= @counts * 25 % 60 %>分</p>
+      </div>
+      <div class="user-info--item">
+        <p class="user-info__item--post">投稿</p>
+        <p>：<%= @counts %>件</p>
+      </div>
+      <%# ログイン中のユーザーとユーザーページが一致していないと編集ボタンを表示しない %>
+      
+    </div>
   </div>
-  
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password %> <i>(変更)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+  <div class="group-list">
+  <%# ログイン中のユーザーとユーザーページが一致していないと追加ボタンを表示しない %>
+  <% if @user.id == current_user.id  %>
+    <div class="group-list__append-btn">
+      <%= link_to "カリキュラムを追加する", controller: "groups", action: "new" %>
+    </div>
+  <% end %>
+  <div class="group-list__groups">
+    <% @user.groups.each do |group| %>
+      <div class="group-list__group">
+        <%= link_to group_posts_path(group) do %>
+          <%= group.name %>
+          
+          <%# ログイン中のユーザーとユーザーページが一致していないと編集・削除アイコンを表示しない %>
+          <% if @user.id == current_user.id  %>
+            <div class="group-list__group--more">
+              <%= link_to "/groups/#{group.id}/edit",class: "group-list__group--more__edit-btn" do %>
+              <i class="fas fa-edit"></i>
+              <% end %>
+              <%= link_to "/groups/#{group.id}",method: :delete,class: "group-list__group--more__delete-btn", data: { confirm: '削除しますか？' } do %>
+              <i class="far fa-trash-alt"></i>
+              <% end %>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
     <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %><i>(確認用)</i><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %> <i>(現在のパスワード)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<%= link_to "変更せずに戻る", :back, class:"cancel-edit" %>
-
-  </div>
+</div>
 </div>

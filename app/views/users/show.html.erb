@@ -32,6 +32,11 @@
 
       <div class="user-name">
         <%= @user.name %>
+        <% if @user.id == current_user.id  %>
+          <div class="user-info__edit-btn">
+            <%= link_to '変更', edit_user_path %>
+          </div>
+        <% end %>
       </div>
       <div class="user-info--item">
         <p class="user-info--item__time">累計時間</p>
@@ -42,11 +47,7 @@
         <p>：<%= @counts %>件</p>
       </div>
       <%# ログイン中のユーザーとユーザーページが一致していないと編集ボタンを表示しない %>
-      <% if @user.id == current_user.id  %>
-        <div class="user-info__edit-btn">
-          <%= link_to 'プロフィール編集', edit_user_path %>
-        </div>
-      <% end %>
+      
     </div>
   </div>
 

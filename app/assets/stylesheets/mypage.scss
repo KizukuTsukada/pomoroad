@@ -43,17 +43,23 @@
     }
   }
   &__edit-btn{
-    width: 187px;
-    padding: 3px;
-    margin: 40px auto 0;
-    background-color: #38aef0;
+    width: 41px;
+    line-height: 5px;
+    padding: 1px;
+    background-color: black;
     border: 0;
-    border-radius: 50px;
+    border-radius: 5px;
     text-align: center;
     a{
       color: #fff;
       text-decoration: none;
+      font-size: 14px;
+      line-height: 11px;
     }
+  }
+  &__edit-btn:hover{
+    -webkit-transform: scale(2.5);
+    transform: scale(1.1);
   }
 }
 
@@ -68,6 +74,16 @@
 .user-name{
   margin-top: 3px;
   font-size: 30px;
+  &__field{
+    border-radius: 10px;
+  }
+}
+
+#user_name{
+  height: 40px;
+  width: 250px;
+  margin-bottom: 5px;
+  border-radius: 10px;
 }
 
 a{
