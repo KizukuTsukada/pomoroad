@@ -194,9 +194,10 @@
   }
 }
 
-.fa-portrait:hover{
+.fa-camera:hover{
   -webkit-transform: scale(3);
   transform: scale(1.3);
+  cursor: pointer;
 }
 
 .fa-edit,.fa-trash-alt{

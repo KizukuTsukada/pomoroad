@@ -17,7 +17,7 @@
         <%= form_for(@user) do |f| %>
           <div class="user-info__image__field">
             <%= f.label :image ,class:"choose-file" do%>
-              <i class="fas fa-portrait"></i>
+              <i class="fas fa-camera"></i>
                 <div class="hidden" style="display: none;" id="myfile">
                   <%= f.file_field :image, class: 'hidden' %>
                 </div>
@@ -36,9 +36,7 @@
             <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
           </div>
           <% if @user.id == current_user.id  %>
-            <div class="user-info__edit-btn">
-              <%= link_to '決定', edit_user_path %>
-            </div>
+            <p>Enter<p>
           <% end %>
         <% end %>
       </div>

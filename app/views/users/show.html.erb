@@ -17,7 +17,7 @@
         <%= form_for(@user) do |f| %>
           <div class="user-info__image__field">
             <%= f.label :image ,class:"choose-file" do%>
-              <i class="fas fa-portrait"></i>
+              <i class="fas fa-camera"></i>
                 <div class="hidden" style="display: none;" id="myfile">
                   <%= f.file_field :image, class: 'hidden' %>
                 </div>

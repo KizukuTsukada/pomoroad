@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
 
+  before_action :set_user, only:[:show, :edit] 
+
+  def show
+  end
+  
   def edit
-    @user = User.find_by(id: params[:id])
-    @counts = Post.where(user_id: @user.id).count
   end
 
   def update 
@@ -12,15 +15,15 @@ class UsersController < ApplicationController
       render :edit
     end
   end
-
-  def show
-    @user = User.find_by(id: params[:id])
-    @counts = Post.where(user_id: @user.id).count
-  end
-
+  
   private
 
   def user_params
-    params.require(:user).permit(:email, :name, :image)
+    params.require(:user).permit(:name, :image)
+  end
+
+  def set_user
+    @user = User.find_by(id: params[:id])
+    @counts = Post.where(user_id: @user.id).count
   end
 end
