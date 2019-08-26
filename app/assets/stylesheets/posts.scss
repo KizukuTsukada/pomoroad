@@ -136,6 +136,7 @@
   border: solid 1px silver ;
   border-radius: 5px; 
   padding: 5px;
+  word-wrap: break-word;
 }
 
 .upper-post__content{
@@ -171,6 +172,7 @@ footer{
   min-height: calc(100vh - 120px);
   background: white;
   overflow: scroll;
+  word-wrap: break-word;
 }
 
 .read-more{
