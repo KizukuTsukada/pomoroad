@@ -43,7 +43,9 @@ JavaScript<br>
 ### モーダルウィンドウ・プロフィール画像プレビュー機能<br>
 jQuery<br>
 <br>
-
+### テスト<br>
+Rspec<br>
+<br>
 ### デプロイ
 
 AWS
