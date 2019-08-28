@@ -9,11 +9,14 @@ class PostsController < ApplicationController
 
   def create
     @post = @group.posts.new(post_params)
-    if @post.save
-    respond_to do |format|
-      format.json
-    end
-    end
+    if @post.content.length > 0
+      @post.save
+      respond_to do |format|
+        format.json
+      end
+    else
+      redirect_to group_post_path
+    end  
   end
 
   def new
