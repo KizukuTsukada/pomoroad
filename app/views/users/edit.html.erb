@@ -33,7 +33,7 @@
       <div class="user-name">
         <%= form_for(current_user) do |f| %>
           <div class="user-name__field">
-            <%= f.text_field :name,id: "user-name" , autofocus: true, autocomplete: "name" %>
+            <%= f.text_field :name,id: "user-name" , autofocus: true, autocomplete: "name",maxlength:10 %>
           </div>
           <% if @user.id == current_user.id  %>
             <p>Enter<p>
