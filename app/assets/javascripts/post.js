@@ -1,7 +1,7 @@
 $(function() {
   function buildHTML(post){
     if (post.content.length >= 100){
-    var html = `<div class="post" data-id=${post.id}>
+    let html = `<div class="post" data-id=${post.id}>
                   <div class="upper-post"
                     <div class="upper-post__date">
                       ${post.created_at}
@@ -14,7 +14,7 @@ $(function() {
                 </div>`
     return html
     } else {
-    var html = `<div class="post" data-id=${post.id}>
+    let html = `<div class="post" data-id=${post.id}>
                   <div class="upper-post"
                     <div class="upper-post__date">
                       ${post.created_at}
@@ -30,8 +30,8 @@ $(function() {
 
   $('#new-post').on('submit', function(e) {
     e.preventDefault();
-    var formData = new FormData(this);
-    var url = $(this).attr('action')
+    let formData = new FormData(this);
+    let url = $(this).attr('action')
     $.ajax({
       url: url,
       type: "POST",
@@ -41,7 +41,7 @@ $(function() {
       contentType: false
     })
     .done(function(post){
-      var html = buildHTML(post);
+      let html = buildHTML(post);
       $('.form__submit').attr('disabled', false);
       $('.posts').prepend(html);
       $('#new-post')[0].reset();
