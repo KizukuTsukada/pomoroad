@@ -176,9 +176,16 @@ boby{
   margin: 20px 0;
 }
 
+.infomation-description a {
+  color: black;
+}
+
 .infomation-description2 {
   width: 500px;
   float: right;
+  a {
+    color: black;
+  }
 }
 
 .clearfix:after{
